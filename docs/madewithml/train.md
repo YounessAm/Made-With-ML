@@ -1,1 +1,1 @@
-::: madewithml.train
+::: scripts.train

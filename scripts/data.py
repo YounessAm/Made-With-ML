@@ -8,7 +8,7 @@ from ray.data import Dataset
 from sklearn.model_selection import train_test_split
 from transformers import BertTokenizer
 
-from madewithml.config import STOPWORDS
+from scripts.config import STOPWORDS
 
 
 def load_data(dataset_loc: str, num_samples: int = None) -> Dataset:

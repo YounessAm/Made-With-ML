@@ -1,6 +1,6 @@
 import datetime
 import json
-import os
+import os  # NOQA: F401 (imported but unused)
 import tempfile
 from typing import Tuple
 
@@ -25,9 +25,9 @@ from torch.nn.parallel.distributed import DistributedDataParallel
 from transformers import BertModel
 from typing_extensions import Annotated
 
-from madewithml import data, utils
-from madewithml.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
-from madewithml.models import FinetunedLLM
+from scripts import data, utils
+from scripts.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
+from scripts.models import FinetunedLLM
 
 # Initialize Typer CLI app
 app = typer.Typer()
@@ -257,5 +257,5 @@ def train_model(
 if __name__ == "__main__":  # pragma: no cover, application
     if ray.is_initialized():
         ray.shutdown()
-    ray.init(runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}})
+    ray.init(num_cpus=4, num_gpus=1)
     app()

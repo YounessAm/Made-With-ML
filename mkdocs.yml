@@ -1,9 +1,10 @@
 site_name: Made With ML
-site_url: https://madewithml.com/
-repo_url: https://github.com/GokuMohandas/Made-With-ML/
+site_url: ''
+repo_url: https://github.com/YounessAm/Made-With-ML
 nav:
   - Home: index.md
-  - madewithml:
+  - scripts:
+    - config: madewithml/config.md
     - data: madewithml/data.md
     - models: madewithml/models.md
     - train: madewithml/train.md
@@ -11,7 +12,7 @@ nav:
     - evaluate: madewithml/evaluate.md
     - predict: madewithml/predict.md
     - serve: madewithml/serve.md
-    - utils: madewithml/utils.md
+    - utils: madewithml/util.md
 theme: readthedocs
 plugins:
   - mkdocstrings

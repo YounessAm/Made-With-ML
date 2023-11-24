@@ -1,1 +1,1 @@
-::: madewithml.models
+::: scripts.models

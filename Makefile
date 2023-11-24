@@ -6,7 +6,7 @@ SHELL = /bin/bash
 style:
 	black .
 	flake8
-	python3 -m isort .
+	python -m isort .
 	pyupgrade
 
 # Cleaning

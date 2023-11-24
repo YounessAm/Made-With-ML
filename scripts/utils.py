@@ -8,7 +8,7 @@ import torch
 from ray.data import DatasetContext
 from ray.train.torch import get_device
 
-from madewithml.config import mlflow
+from scripts.config import mlflow
 
 DatasetContext.get_current().execution_options.preserve_order = True
 

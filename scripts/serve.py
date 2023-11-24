@@ -8,8 +8,8 @@ from fastapi import FastAPI
 from ray import serve
 from starlette.requests import Request
 
-from madewithml import evaluate, predict
-from madewithml.config import MLFLOW_TRACKING_URI, mlflow
+from scripts import evaluate, predict
+from scripts.config import MLFLOW_TRACKING_URI, mlflow
 
 # Define application
 app = FastAPI(
@@ -19,7 +19,7 @@ app = FastAPI(
 )
 
 
-@serve.deployment(num_replicas="1", ray_actor_options={"num_cpus": 8, "num_gpus": 0})
+@serve.deployment(num_replicas="1", ray_actor_options={"num_cpus": 3, "num_gpus": 0})
 @serve.ingress(app)
 class ModelDeployment:
     def __init__(self, run_id: str, threshold: int = 0.9):

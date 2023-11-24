@@ -1,6 +1,6 @@
 # config.py
 import logging
-import os
+import os  # NOQA: F401 (imported but unused)
 import sys
 from pathlib import Path
 
@@ -10,7 +10,7 @@ import mlflow
 ROOT_DIR = Path(__file__).parent.parent.absolute()
 LOGS_DIR = Path(ROOT_DIR, "logs")
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
-EFS_DIR = Path(f"/efs/shared_storage/madewithml/{os.environ.get('GITHUB_USERNAME', '')}")
+EFS_DIR = "/tmp"
 
 # Config MLflow
 MODEL_REGISTRY = Path(f"{EFS_DIR}/mlflow")
@@ -52,7 +52,7 @@ logging_config = {
     },
     "root": {
         "handlers": ["console", "info", "error"],
-        "level": logging.INFO,
+        "level": logging.DEBUG,
         "propagate": True,
     },
 }
@@ -60,6 +60,13 @@ logging_config = {
 # Logger
 logging.config.dictConfig(logging_config)
 logger = logging.getLogger()
+
+# # Sample messages (note that we use configured `logger` now)
+# logger.debug("Used for debugging your code.")
+# logger.info("Informative messages from your code.")
+# logger.warning("Everything works but there is something to be aware of.")
+# logger.error("There's been a mistake with the process.")
+# logger.critical("There is something terribly wrong and process may terminate.")
 
 # Constraints
 STOPWORDS = [

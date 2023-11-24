@@ -1,1 +1,1 @@
-::: madewithml.predict
+::: scripts.predict

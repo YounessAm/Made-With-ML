@@ -1,1 +1,1 @@
-::: madewithml.serve
+::: scripts.serve

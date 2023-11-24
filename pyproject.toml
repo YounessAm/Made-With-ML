@@ -31,15 +31,3 @@ ignore = ["E501", "W503", "E226"]
 # E501: Line too long
 # W503: Line break occurred before binary operator
 # E226: Missing white space around arithmetic operator
-
-[tool.pyupgrade]
-py39plus = true
-
-# Pytest
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = "test_*.py"
-
-# Pytest cov
-[tool.coverage.run]
-omit=["madewithml/evaluate.py", "madewithml/serve.py"]
